@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="circlerangeview_colors">
+        <item>#008C8C</item>
+        <item>#4DA6FF</item>
+        <item>#4DC433</item>
+        <item>#A4C433</item>
+        <item>#FF944D</item>
+        <item>#FF4D4D</item>
+        <item>#C30C0C</item>
+    </string-array>
+
+    <string-array name="circlerangeview_values">
+        <item>BP_PURE_PERIOD_HBP</item>
+        <item>BP_LOW</item>
+        <item>BP_NORMAL</item>
+        <item>BP_NORMAL_HIGH</item>
+        <item>BP_MILD_HYPERTENSION</item>
+        <item>BP_MIDDLE_HYPERTENSION</item>
+        <item>BP_SEVERE_HYPERTENSION</item>
+    </string-array>
+
+    <string-array name="circlerangeview_txts">
+        <item>单纯收缩期</item>
+        <item>偏低</item>
+        <item>理想</item>
+        <item>正常</item>
+        <item>轻度</item>
+        <item>中度</item>
+        <item>重度</item>
+    </string-array>
+
+</resources>

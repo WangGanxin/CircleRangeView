@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleRangeView">
+
+        <attr name="rangeColorArray" format="reference"/>
+        <attr name="rangeTextArray" format="reference"/>
+        <attr name="rangeValueArray" format="reference"/>
+
+        <attr name="borderColor" format="color|reference"/>
+        <attr name="cursorColor" format="color|reference"/>
+        <attr name="extraTextColor" format="color|reference"/>
+
+        <attr name="rangeTextSize" format="dimension|reference"/>
+        <attr name="extraTextSize" format="dimension|reference"/>
+    </declare-styleable>
+
+</resources>
