@@ -29,38 +29,35 @@ import java.util.List;
  */
 public class CircleRangeView extends View {
 
+    private int mPadding;
     private int mRadius; // 画布边缘半径（去除padding后的半径）
     private int mStartAngle = 150; // 起始角度
     private int mSweepAngle = 240; // 绘制角度
+
     private int mSparkleWidth; // 指示标宽度
-
-    private float mLength1; // 刻度顶部相对边缘的长度
     private int mCalibrationWidth; // 刻度圆弧宽度
-    private float mLength2; // 刻度读数顶部相对边缘的长度
-
-    private int mPadding;
+    private float mLength1; // 刻度顶部相对边缘的长度
     private float mCenterX, mCenterY; // 圆心坐标
 
     private Paint mPaint;
     private RectF mRectFProgressArc;
     private RectF mRectFCalibrationFArc;
-    private RectF mRectFTextArc;
     private Rect mRectText;
 
-    private int mBackgroundColor;
-
     private CharSequence[] rangeColorArray;
+
     private CharSequence[] rangeValueArray;
     private CharSequence[] rangeTextArray;
-
     private int borderColor = ContextCompat.getColor(getContext(), R.color.wdiget_circlerange_border_color);
+
     private int cursorColor = ContextCompat.getColor(getContext(), R.color.wdiget_circlerange_cursor_color);
     private int extraTextColor = ContextCompat.getColor(getContext(), R.color.widget_circlerange_extra_color);
-
     private int rangeTextSize = sp2px(34); //中间文本大小
+
     private int extraTextSize = sp2px(14); //附加信息文本大小
     private int borderSize = dp2px(5); //进度圆弧宽度
 
+    private int mBackgroundColor;
     private int mSection = 0; // 等分份数
     private String currentValue;
     private List<String> extraList = new ArrayList<>();
@@ -114,7 +111,6 @@ public class CircleRangeView extends View {
 
         mRectFProgressArc = new RectF();
         mRectFCalibrationFArc = new RectF();
-        mRectFTextArc = new RectF();
         mRectText = new Rect();
 
         mBackgroundColor = android.R.color.transparent;
@@ -131,7 +127,6 @@ public class CircleRangeView extends View {
         setPadding(mPadding, mPadding, mPadding, mPadding);
 
         mLength1 = mPadding + mSparkleWidth / 2f + dp2px(12);
-        mLength2 = mLength1 + mCalibrationWidth + dp2px(1) + dp2px(5);
 
         int width = resolveSize(dp2px(220), widthMeasureSpec);
         mRadius = (width - mPadding * 2) / 2;
@@ -139,13 +134,13 @@ public class CircleRangeView extends View {
         setMeasuredDimension(width, width - dp2px(30));
 
         mCenterX = mCenterY = getMeasuredWidth() / 2f;
+
         mRectFProgressArc.set(
                 mPadding + mSparkleWidth / 2f,
                 mPadding + mSparkleWidth / 2f,
                 getMeasuredWidth() - mPadding - mSparkleWidth / 2f,
                 getMeasuredWidth() - mPadding - mSparkleWidth / 2f
         );
-
         mRectFCalibrationFArc.set(
                 mLength1 + mCalibrationWidth / 2f,
                 mLength1 + mCalibrationWidth / 2f,
@@ -155,12 +150,6 @@ public class CircleRangeView extends View {
 
         mPaint.setTextSize(sp2px(10));
         mPaint.getTextBounds("0", 0, "0".length(), mRectText);
-        mRectFTextArc.set(
-                mLength2 + mRectText.height(),
-                mLength2 + mRectText.height(),
-                getMeasuredWidth() - mLength2 - mRectText.height(),
-                getMeasuredWidth() - mLength2 - mRectText.height()
-        );
     }
 
     @Override
