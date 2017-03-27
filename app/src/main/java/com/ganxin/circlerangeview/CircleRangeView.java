@@ -276,6 +276,12 @@ public class CircleRangeView extends View {
                 Resources.getSystem().getDisplayMetrics());
     }
 
+    /**
+     * 根据角度和半径进行三角函数计算坐标
+     * @param radius
+     * @param angle
+     * @return
+     */
     private float[] getCoordinatePoint(float radius, float angle) {
         float[] point = new float[2];
 
