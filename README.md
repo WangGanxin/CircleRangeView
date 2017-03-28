@@ -64,6 +64,10 @@
 
 ```
 
+# Reference
+
+- [Android自定义仪表盘View，仿新旧两版芝麻信用分、炫酷汽车速度仪表盘](https://github.com/woxingxiao/DashboardView) 
+
 # Contact Me
 
 - QQ：445253393（注明来自GitHub）
