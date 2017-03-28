@@ -1,13 +1,13 @@
 # CircleRangeView
 自定义圆形仪表盘View，适合根据数值显示不同等级范围的场景 
 
-#Demo
+# Demo
 
 运行效果图：
 
 ![CircleRangeView](/images/circle-range-view.gif)
 
-#Usage
+# Usage
 
 - 1.布局文件引入：
 
