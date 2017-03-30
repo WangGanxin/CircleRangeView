@@ -371,13 +371,6 @@ public class CircleRangeView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mAngleWhenAnim = (float) animation.getAnimatedValue();
-            }
-        });
-
-        ValueAnimator creditValueAnimator = ValueAnimator.ofInt(0, (int) degree);
-        creditValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
                 postInvalidate();
             }
         });
@@ -387,7 +380,7 @@ public class CircleRangeView extends View {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet
                 .setDuration(delay)
-                .playTogether(creditValueAnimator, degreeValueAnimator);
+                .playTogether(degreeValueAnimator);
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
